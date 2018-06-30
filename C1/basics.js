@@ -28,3 +28,8 @@ console.log("5" - 1) // "5" is converted to number
 console.log("5" + 1) // Occurrence of string concatenation
 console.log("five" * 2) // Strings can't be multipled. So NaN occurs
 console.log(false == 0) // Converts one value to other value type
+
+// SHORT CIRCUITING OF LOGICAL OPERATORS
+console.log(null || "user")
+console.log("Agnes" || "user")
+//The || operator will return the value to its left when that can be converted to true and will return the value on its right otherwise. 
