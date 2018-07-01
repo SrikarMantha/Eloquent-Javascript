@@ -80,3 +80,26 @@ for (let counter = 0; counter < 10; counter = counter + 1) {
   result = result * 2;
 }
 console.log(result);
+
+// BREAKING OUT OF A LOOP
+for (let current = 20; ;current = current + 1) {
+  if (current % 7 == 0) {
+    console.log(current);
+    break;
+  }
+}
+
+// SWITCH
+switch (prompt("What is the weather like?")) {
+  case "rainy":
+    console.log("Remember to bring an umbrella.");
+    break;
+  case "sunny":
+    console.log("Dress lightly.");
+  case "cloudy":
+    console.log("Go outside.");
+    break;
+  default:
+    console.log("Unknown weather type!");
+    break;
+}
