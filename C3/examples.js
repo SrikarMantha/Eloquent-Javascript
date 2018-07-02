@@ -25,3 +25,15 @@ if (true) {
 // y is not visible here
 console.log(x + z);
 // console.log(x + y); (ERROR!! y is not defined)
+
+const halve = function(n) {
+  return n / 2;
+};
+let n = 10;
+console.log(halve(100)); // The code inside the halve function refers to n, it is seeing its own n, not the global n.
+
+// DECLARATION NOTATION
+console.log("The future says:", future());
+function future() {
+  return "You'll never have flying cars";
+}
