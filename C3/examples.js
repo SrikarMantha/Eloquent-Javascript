@@ -24,3 +24,4 @@ if (true) {
 }
 // y is not visible here
 console.log(x + z);
+// console.log(x + y); (ERROR!! y is not defined)
