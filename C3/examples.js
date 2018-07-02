@@ -68,3 +68,20 @@ function power(base, exponent = 2) {
 }
 console.log(power(4));
 console.log(power(2, 6));
+
+//CLOSURE (A function that references bindings from local scopes around it is called a closure)
+function multiplier(factor) {
+  return number => number * factor;
+}
+let twice = multiplier(4);
+console.log(twice(5));
+
+// RECURSION (A function that calls itself is called recursive)
+function power(base, exponent) {
+  if (exponent == 0) {
+    return 1;
+  } else {
+    return base * power(base, exponent - 1);
+  }
+}
+console.log(power(2, 3));
