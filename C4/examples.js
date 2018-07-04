@@ -42,3 +42,27 @@ console.log(Object.keys({x: 0, y: 0, z: 2}));
 let objectA = {a: 1, b: 2};
 Object.assign(objectA, {b: 3, c: 4});
 console.log(objectA);
+
+// MUTABILITY
+let object1 = {value: 10};
+let object2 = object1;
+let object3 = {value: 10};
+console.log(object1 == object2);
+console.log(object1 == object3);
+object1.value = 15;
+console.log(object2.value);
+console.log(object3.value);
+
+//
+const score = {visitors: 0, home: 0};
+score.visitors = 1; // This is okay
+score = {visitors: 1, home: 1}; // This isn't allowed
+console.log(score.visitors);
+
+// THE LYCANTHROPE'S LOG
+let journal = [];
+function addEntry(events, squirrel) {
+  journal.push({events, squirrel});
+}
+addEntry(["work", "touched tree", "pizza", "running", "television"], false);
+console.log(journal);
