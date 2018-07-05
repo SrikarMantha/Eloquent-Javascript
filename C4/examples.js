@@ -21,11 +21,13 @@ console.log(sequence);
 let day1 = {
   squirrel: false,
   events: ["work", "touched tree", "pizza", "running"]
+  "touch tree" : "Touched"
 };
 console.log(day1.squirrel);
 console.log(day1.wolf);
 day1.wolf = false;
 console.log(day1.wolf);
+console.log(day1["touch tree"]);
 
 // delete
 let anObject = {left: 1, right: 2};
@@ -66,3 +68,8 @@ function addEntry(events, squirrel) {
 }
 addEntry(["work", "touched tree", "pizza", "running", "television"], false);
 console.log(journal);
+
+// Array methods
+console.log([1, 2, 3, 2, 1].indexOf(2));
+console.log([0, 1, 2, 3, 4].slice(2, 4));
+console.log([0, 1, 2, 3, 4].slice(2));
