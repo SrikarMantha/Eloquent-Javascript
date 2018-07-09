@@ -33,7 +33,6 @@ let n = 10;
 console.log(halve(100)); // The code inside the halve function refers to n, it is seeing its own n, not the global n.
 
 // NESTED SCOPE
-
 const hummus = function(factor) {
   const ingredient = function(amount, unit, name) {
     let ingredientAmount = amount * factor;
@@ -50,6 +49,28 @@ const hummus = function(factor) {
   ingredient(0.5, "teaspoon", "cumin");
 };
 hummus(1);
+
+// ARROW FUNCTIONS
+
+// 1.When there are 2 parameters
+const power = (base, exponent) => {
+  let result = 1;
+  for (let count = 0; count < exponent; count++) {
+    result *= base;
+  }
+  return result;
+};
+power(2,3);
+
+// 2.When there is 1 parameter
+const square1 = (x) => { return x * x; };  // Can also be written as follows
+const square2 = x => x * x;
+
+// 3.When there are no parameters
+const horn = () => {
+  console.log("Toot");
+};
+horn();
 
 // DECLARATION NOTATION
 console.log("The future says:", future());
