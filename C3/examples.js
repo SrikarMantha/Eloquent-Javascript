@@ -85,6 +85,15 @@ function greet(who) {
 greet("Harry");
 console.log("Bye");
 
+// This will “blow the stack” or run out of space
+function chicken() {
+  return egg();
+}
+function egg() {
+  return chicken();
+}
+console.log(chicken() + " came first.");
+
 // OPTIONAL ARGUMENTS
 // In the following example we'll define square with only one parameter. Yet when we'll call it with three, the language doesn’t complain. It ignores the extra arguments and computes the square of the first one.
 function square(x) { return x * x; }
