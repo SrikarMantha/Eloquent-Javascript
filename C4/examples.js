@@ -2,6 +2,7 @@
 let listOfNumbers = [2, 3, 5, 7, 11];
 console.log(listOfNumbers);
 console.log(listOfNumbers[2]);
+console.log(listOfNumbers[2-1]);
 listOfNumbers.length;
 
 // METHODS
@@ -68,6 +69,16 @@ function addEntry(events, squirrel) {
 }
 addEntry(["work", "touched tree", "pizza", "running", "television"], false);
 console.log(journal);
+
+// ϕ =	n11n00 − n10n01/sqrt(n1•n0•n•1n•0)
+function phi(table) {
+  return (table[3] * table[0] - table[2] * table[1]) /
+    Math.sqrt((table[2] + table[3]) *
+              (table[0] + table[1]) *
+              (table[1] + table[3]) *
+              (table[0] + table[2]));
+}
+console.log(phi([76, 9, 4, 1]));
 
 // Array methods
 console.log([1, 2, 3, 2, 1].indexOf(2));
