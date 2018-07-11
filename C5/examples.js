@@ -38,6 +38,7 @@ console.log(greaterThan10(11));
 // forEach
 ["A", "B"].forEach(l => console.log(l));
 
+//----------------------------------------------------------
 const companies= [
   {name: "Company One", category: "Finance", start: 1981, end: 2004},
   {name: "Company Two", category: "Retail", start: 1992, end: 2008},
@@ -58,5 +59,24 @@ for(let i = 0; i < companies.length; i++) {
 
 // forEach
 companies.forEach(function(company) {
-   console.log(company.name); // Or company instead of company.name to get the array
+  console.log(company.name); // Or company instead of company.name to get the array
 });
+
+// Filter
+// Get 21 and older
+
+let canDrink = [];
+for(let i = 0; i < ages.length; i++) {
+  if(ages[i] >= 21) {
+    canDrink.push(ages[i]);
+  }
+}
+
+const canDrink = ages.filter(function(age) {
+  if(age >= 21) {
+    return true;
+  }
+});
+// The above code can also be written as follows
+// const canDrink = ages.filter(age => age >= 21);
+console.log(canDrink);
