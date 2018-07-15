@@ -50,3 +50,26 @@ Rabbit.prototype.speak = function(line) {
 };
 let weirdRabbit = new Rabbit("weird");  // This means that an object with the right prototype is automatically created, bound to this in the function, and returned at the end of the function
 weirdRabbit.speak("ARGHHH");
+
+// CLASS NOTATION
+class Rabbit {
+  constructor(type) {
+    this.type = type;
+  }
+  speak(line) {
+    console.log(`The ${this.type} rabbit says '${line}'`);
+  }
+}
+let killerRabbit = new Rabbit("killer");
+let blackRabbit = new Rabbit("black");
+killerRabbit.speak("Kill'em");
+blackRabbit.speak("Destroy");
+
+// Like function, class can be used both in statements and in expressions
+let object = new class
+{
+  getWord() {
+    return "hello";
+  }
+};
+console.log(object.getWord());
