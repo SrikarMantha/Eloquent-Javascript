@@ -40,3 +40,13 @@ let protoRabbit = {
 let killerRabbit = Object.create(protoRabbit);
 killerRabbit.type = "killer";
 killerRabbit.speak("SKREEEE!");
+
+// Constructor
+function Rabbit(type) {
+  this.type = type;
+}
+Rabbit.prototype.speak = function(line) {
+  console.log(`The ${this.type} rabbit says '${line}'`);
+};
+let weirdRabbit = new Rabbit("weird");  // This means that an object with the right prototype is automatically created, bound to this in the function, and returned at the end of the function
+weirdRabbit.speak("ARGHHH");
