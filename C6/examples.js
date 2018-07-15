@@ -73,3 +73,31 @@ let object = new class
   }
 };
 console.log(object.getWord());
+
+// OVERRIDING DERIVED PROPERTIES
+Rabbit.prototype.teeth = "small";
+console.log(killerRabbit.teeth);
+killerRabbit.teeth = "long, sharp, and bloody";
+console.log(killerRabbit.teeth);
+console.log(blackRabbit.teeth);
+console.log(Rabbit.prototype.teeth);
+console.log(killerRabbit.teeth);
+
+//Here, the object’s property names are the people’s names, and the property values are their ages. But we certainly didn’t list anybody named toString in our map
+let ages = {
+  Boris: 39,
+  Liang: 22,
+  Julia: 62
+};
+console.log(`Julia is ${ages["Júlia"]}`);
+console.log("Is Jack's age known?", "Jack" in ages);
+console.log("Is toString's age known?", "toString" in ages);
+
+// MAP
+let ages = new Map();
+ages.set("Boris", 39);
+ages.set("Liang", 22);
+ages.set("Julia", 62);
+console.log(`Júlia is ${ages.get("Julia")}`);
+console.log("Is Jack's age known?", ages.has("Jack"));
+console.log(ages.has("toString"));
