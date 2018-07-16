@@ -101,3 +101,9 @@ ages.set("Julia", 62);
 console.log(`Júlia is ${ages.get("Julia")}`);
 console.log("Is Jack's age known?", ages.has("Jack"));
 console.log(ages.has("toString"));
+
+// POLYMORPHISM
+Rabbit.prototype.toString = function() {
+  return `a ${this.type} rabbit`;
+};
+console.log(String(blackRabbit));
