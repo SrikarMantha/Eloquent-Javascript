@@ -34,3 +34,21 @@ console.log(dateTime.test("30-jan-2003 15:20"));
 let notBinary = /[^01]/;
 console.log(notBinary.test("1100100010100110"));
 console.log(notBinary.test("1100100010200110"));
+
+// REPEATING PARTS OF A PATTERN
+// When you put a plus sign (+) after something in a regular expression, it indicates that the element may be repeated more than once
+// The star (*) has a similar meaning but also allows the pattern to match zero times
+console.log(/'\d+'/.test("'123'"));
+console.log(/'\d+'/.test("''"));
+console.log(/'\d*'/.test("'123'"));
+console.log(/'\d*'/.test("''"));
+
+// A question mark makes a part of a pattern optional, meaning it may occur zero times or one time
+let neighbor = /neighbou?r/;
+console.log(neighbor.test("neighbour"));
+console.log(neighbor.test("neighbor"));
+
+// To indicate that a pattern should occur a precise number of times, use braces
+let dateTime = /\d{1,2}-\d{1,2}-\d{4} \d{1,2}:\d{2}/;
+console.log(dateTime.test("01-300-2003 8:45"));
+// You can also specify open-ended ranges when using braces by omitting the number after the comma. So, {5,} means five or more times
