@@ -52,3 +52,8 @@ console.log(neighbor.test("neighbor"));
 let dateTime = /\d{1,2}-\d{1,2}-\d{4} \d{1,2}:\d{2}/;
 console.log(dateTime.test("01-300-2003 8:45"));
 // You can also specify open-ended ranges when using braces by omitting the number after the comma. So, {5,} means five or more times
+
+// GROUPING SUB EXPRESSIONS
+// To use an operator like * or + on more than one element at a time, you have to use parentheses
+let cartoonCrying = /boo+(hoo+)+/i; // i at the end of the expression in the example makes this regular expression case insensitive, allowing it to match the uppercase B 
+console.log(cartoonCrying.test("Boohoooohoohooo"));
