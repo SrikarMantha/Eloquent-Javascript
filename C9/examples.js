@@ -55,5 +55,28 @@ console.log(dateTime.test("01-300-2003 8:45"));
 
 // GROUPING SUB EXPRESSIONS
 // To use an operator like * or + on more than one element at a time, you have to use parentheses
-let cartoonCrying = /boo+(hoo+)+/i; // i at the end of the expression in the example makes this regular expression case insensitive, allowing it to match the uppercase B 
+let cartoonCrying = /boo+(hoo+)+/i; // i at the end of the expression in the example makes this regular expression case insensitive, allowing it to match the uppercase B
 console.log(cartoonCrying.test("Boohoooohoohooo"));
+
+// MATCHES AND GROUPS
+// The test method is the absolute simplest way to match a regular expression. It tells you only whether it matched and nothing else
+let match = /\d+/.exec("one two 100");
+console.log(match);
+console.log(match.index);
+
+//String values have a match method that behaves similarly
+console.log("one two 100".match(/\d+/));
+
+// JavaScript has a standard class for representing dates
+console.log(new Date());
+
+// You can also create an object for a specific time
+console.log(new Date(2009, 11, 9)); // Wed Dec 09 2009 00:00:00 GMT+0100 (CET)
+console.log(new Date(2009, 11, 9, 12, 59, 59, 999)); // → Wed Dec 09 2009 12:59:59 GMT+0100 (CET)
+// *****JavaScript uses a convention where month numbers start at zero (so December is 11), yet day numbers start at one
+
+function getDate(string) {
+  let [_, month, day, year] = /(\d{1,2})-(\d{1,2})-(\d{4})/.exec(string); // The _ (underscore) binding is ignored and used only to skip the full match element in the array returned by exec
+  return new Date(year, month - 1, day);
+}
+console.log(getDate("1-30-2003"));
