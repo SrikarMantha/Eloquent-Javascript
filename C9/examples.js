@@ -80,3 +80,30 @@ function getDate(string) {
   return new Date(year, month - 1, day);
 }
 console.log(getDate("1-30-2003"));
+
+// CHOICE PATTERNS
+// The pipe character (|) denotes a choice between the pattern to its left and the pattern to its right
+let animalCount = /\b\d+ (pig|cow|chicken)s?\b/;
+console.log(animalCount.test("15 pigs"));
+console.log(animalCount.test("15 pigchickens"));
+
+// THE REPLACE METHOD
+console.log("papa".replace("p", "m"));
+console.log("Borobudur".replace(/[ou]/, "a")); // only first o gets replaced
+console.log("Borobudur".replace(/[ou]/g, "a")); // g indicates global and each and every character present is replaced
+
+// swap these names and remove the comma
+console.log("Liskov, Barbara\nMcCarthy, John\nWadler, Philip".replace(/(\w+), (\w+)/g, "$2 $1"));
+// The $1 and $2 in the replacement string refer to the parenthesized groups in the pattern. $1 is replaced by the text that matched against the first group, $2 by the second, and so on
+
+let stock = "1 lemon, 2 cabbages, and 101 eggs";
+function minusOne(match, amount, unit) {
+  amount = Number(amount) - 1;
+  if (amount == 1) { // only one left, remove the 's'
+    unit = unit.slice(0, unit.length - 1);
+  } else if (amount == 0) {
+    amount = "no";
+  }
+  return amount + " " + unit;
+}
+console.log(stock.replace(/(\d+) (\w+)/g, minusOne));
