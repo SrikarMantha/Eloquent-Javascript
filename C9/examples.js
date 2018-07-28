@@ -107,3 +107,17 @@ function minusOne(match, amount, unit) {
   return amount + " " + unit;
 }
 console.log(stock.replace(/(\d+) (\w+)/g, minusOne));
+
+// GREED
+// It is possible to use replace to write a function that removes all comments from a piece of JavaScript code
+function stripComments(code) {
+  return code.replace(/\/\/.*|\/\*[^]*\*\//g, "");
+}
+console.log(stripComments("1 + /* 2 */3"));
+console.log(stripComments("x = 10;// ten!"));
+console.log(stripComments("1 /* a */+/* b */ 1"));
+
+// THE SEARCH METHOD
+// It returns the first index on which the expression was found, or -1 when it wasn’t found
+console.log("  word".search(/\S/));
+console.log("    ".search(/\S/));
