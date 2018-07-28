@@ -121,3 +121,19 @@ console.log(stripComments("1 /* a */+/* b */ 1"));
 // It returns the first index on which the expression was found, or -1 when it wasn’t found
 console.log("  word".search(/\S/));
 console.log("    ".search(/\S/));
+
+// THE LAST INDEX PROPERTY
+let pattern = /y/g;
+pattern.lastIndex = 3;
+let match = pattern.exec("xyzzy");
+console.log(match.index);
+console.log(pattern.lastIndex);
+
+// INTERNATIONAL CHARACTERS
+console.log(/🍎{3}/.test("🍎🍎🍎")); // false
+console.log(/<.>/.test("<🌹>")); // false
+console.log(/<.>/u.test("<🌹>")); // true (Because we added u which stands for unicode)
+console.log(/\p{Script=Greek}/u.test("α")); // true
+console.log(/\p{Script=Arabic}/u.test("α")); // false
+console.log(/\p{Alphabetic}/u.test("α")); // true
+console.log(/\p{Alphabetic}/u.test("!")); // false
