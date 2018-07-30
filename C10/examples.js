@@ -24,3 +24,11 @@ exports.formatDate = function(date, format) {
     if (tag == "dddd") return days[date.getDay()];
   });
 };
+
+// ECMA SCRIPT MODULES
+import ordinal from "ordinal";
+import {days, months} from "date-names";
+export function formatDate(date, format) { /* ... */ }
+
+import {days as dayNames} from "date-names";
+console.log(dayNames.length);
