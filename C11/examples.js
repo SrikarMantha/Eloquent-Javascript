@@ -55,3 +55,24 @@ function availableNeighbors(nest) {
     return nest.neighbors.filter((_, i) => result[i]);
   });
 }
+
+// GENERATORS
+function* powers(n) {
+  for (let current = n;; current *= n) {
+    yield current;
+  }
+}
+for (let power of powers(3)) {
+  if (power > 50) break;
+  console.log(power);
+}
+
+// THE EVENT LOOP
+try {
+  setTimeout(() => {
+    throw new Error("Woosh");
+  }, 20);
+} catch (_) {
+  // This will not run
+  console.log("Caught!");
+}
