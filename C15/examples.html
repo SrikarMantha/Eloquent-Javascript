@@ -1,0 +1,17 @@
+<!-- EVENT HANDLERS -->
+<p>Click this document to activate the handler.</p>
+<script>
+  window.addEventListener("click", () => {
+    console.log("You knocked?");
+  });
+</script>
+
+<!-- EVENTS AND DOM NODES -->
+<button>Click me</button>
+<p>No handler here.</p>
+<script>
+  let button = document.querySelector("button");
+  button.addEventListener("click", () => {
+    console.log("Button clicked.");
+  });
+</script>
