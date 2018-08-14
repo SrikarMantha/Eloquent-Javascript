@@ -92,3 +92,37 @@ Color:
     });
   }
 </script>
+
+<!-- SELECT FIELDS -->
+<select multiple>
+  <option value="1">0001</option>
+  <option value="2">0010</option>
+  <option value="4">0100</option>
+  <option value="8">1000</option>
+</select> = <span id="output">0</span>
+<script>
+  let select = document.querySelector("select");
+  let output = document.querySelector("#output");
+  select.addEventListener("change", () => {
+    let number = 0;
+    for (let option of Array.from(select.options)) {
+      if (option.selected) {
+        number += Number(option.value);
+      }
+    }
+    output.textContent = number;
+  });
+</script>
+
+<!-- FILE FIELDS -->
+<input type="file">
+<script>
+  let input = document.querySelector("input");
+  input.addEventListener("change", () => {
+    if (input.files.length > 0) {
+      let file = input.files[0];
+      console.log("You chose", file.name);
+      if (file.type) console.log("It has type", file.type);
+    }
+  });
+</script>
