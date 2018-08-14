@@ -14,3 +14,16 @@
    <input type="radio" value="B" name="choice" checked>
    <input type="radio" value="C" name="choice"> (radio)</p>
 <p><input type="file"> (file)</p>
+
+<!-- FOCUS -->
+<input type="text">
+<script>
+  document.querySelector("input").focus();
+  console.log(document.activeElement.tagName);
+  document.querySelector("input").blur();
+  console.log(document.activeElement.tagName);
+</script>
+
+<!-- DISABLED FIELDS -->
+<button>I'm all right</button>
+<button disabled>I'm out</button>
